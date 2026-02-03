@@ -1,0 +1,132 @@
+{
+  "title": "사회적 정체성 설문 (Social Identity)",
+  "description": "귀하의 인구통계학적 정보를 수집합니다. 모든 정보는 익명으로 처리됩니다.",
+  "questions": [
+    {
+      "id": "age",
+      "question": "귀하의 연령대는 어떻게 되십니까?",
+      "type": "text",
+      "hint": "예: 20대, 30대, 또는 구체적 나이"
+    },
+    {
+      "id": "sex",
+      "question": "귀하의 생물학적 성별은 무엇입니까?",
+      "type": "choice",
+      "options": ["남성", "여성", "기타", "응답 거부"]
+    },
+    {
+      "id": "gender",
+      "question": "귀하가 인식하는 성 정체성은 무엇입니까?",
+      "type": "choice",
+      "options": ["남성", "여성", "논바이너리", "기타", "응답 거부"]
+    },
+    {
+      "id": "sexual_orientation",
+      "question": "귀하의 성적 지향은 무엇입니까?",
+      "type": "choice",
+      "options": ["이성애", "동성애", "양성애", "무성애", "기타", "응답 거부"]
+    },
+    {
+      "id": "ethnicity",
+      "question": "귀하의 민족적 배경은 무엇입니까?",
+      "type": "text",
+      "hint": "예: 한국인, 중국인, 일본인, 혼혈 등"
+    },
+    {
+      "id": "race",
+      "question": "귀하의 인종은 무엇입니까?",
+      "type": "choice",
+      "options": ["동아시아인", "동남아시아인", "남아시아인", "백인", "흑인", "히스패닉/라틴계", "혼혈", "기타"]
+    },
+    {
+      "id": "disability",
+      "question": "귀하는 장애나 건강상의 제약이 있습니까?",
+      "type": "choice",
+      "options": ["없음", "신체적 장애", "감각적 장애", "정신적 장애", "복합적 장애", "응답 거부"]
+    },
+    {
+      "id": "nationality",
+      "question": "귀하의 국적은 무엇입니까?",
+      "type": "text",
+      "hint": "예: 대한민국, 미국, 일본 등"
+    },
+    {
+      "id": "dual_nationality",
+      "question": "귀하는 이중 국적을 가지고 계십니까?",
+      "type": "choice",
+      "options": ["아니오", "예 (국가명: _____)", "응답 거부"]
+    },
+    {
+      "id": "residence",
+      "question": "귀하의 현재 거주지는 어디입니까?",
+      "type": "text",
+      "hint": "예: 서울특별시, 부산광역시 등 (구체적 주소는 불필요)"
+    },
+    {
+      "id": "education",
+      "question": "귀하의 최종 학력은 무엇입니까?",
+      "type": "choice",
+      "options": ["초등학교 졸업 이하", "중학교 졸업", "고등학교 졸업", "전문대 졸업", "대학교 졸업", "석사 학위", "박사 학위"]
+    },
+    {
+      "id": "occupation",
+      "question": "귀하의 현재 직업 상태는 무엇입니까?",
+      "type": "choice",
+      "options": ["전일제 근무 (주 35시간 이상)", "시간제 근무 (주 35시간 미만)", "자영업", "학생", "구직 중", "은퇴", "기타"]
+    },
+    {
+      "id": "major",
+      "question": "귀하의 전공 분야는 무엇입니까? (해당되는 경우)",
+      "type": "text",
+      "hint": "예: 컴퓨터공학, 경영학, 의학 등"
+    },
+    {
+      "id": "job",
+      "question": "귀하의 구체적인 직업은 무엇입니까? (해당되는 경우)",
+      "type": "text",
+      "hint": "예: 소프트웨어 개발자, 교사, 간호사 등"
+    },
+    {
+      "id": "household_income",
+      "question": "귀하의 월 가구 소득은 대략 어느 정도입니까?",
+      "type": "choice",
+      "options": ["150만원 미만", "150-300만원", "300-500만원", "500-750만원", "750만원 이상", "응답 거부"]
+    },
+    {
+      "id": "perceived_income",
+      "question": "귀하는 본인의 소득 수준이 어느 정도라고 생각하십니까?",
+      "type": "choice",
+      "options": ["평균 이하", "평균", "평균 이상", "응답 거부"]
+    },
+    {
+      "id": "income_satisfaction",
+      "question": "귀하는 현재 소득 수준에 얼마나 만족하십니까?",
+      "type": "choice",
+      "options": ["매우 불만족", "불만족", "보통", "만족", "매우 만족"]
+    },
+    {
+      "id": "social_class",
+      "question": "귀하는 스스로를 어느 계층에 속한다고 생각하십니까?",
+      "type": "choice",
+      "options": ["하류층", "중하류층", "중류층", "중상류층", "상류층"]
+    },
+    {
+      "id": "living_style",
+      "question": "귀하의 현재 거주 형태는 무엇입니까?",
+      "type": "choice",
+      "options": ["혼자 거주", "배우자/파트너와 거주", "가족과 거주", "룸메이트와 거주", "기타"]
+    },
+    {
+      "id": "political_affiliation",
+      "question": "귀하의 정치적 성향은 어떻습니까?",
+      "type": "choice",
+      "options": ["매우 진보", "진보", "중도", "보수", "매우 보수", "응답 거부"]
+    },
+    {
+      "id": "religious_affiliation",
+      "question": "귀하의 종교는 무엇입니까?",
+      "type": "choice",
+      "options": ["무교", "기독교", "천주교", "불교", "이슬람교", "기타", "응답 거부"]
+    }
+  ]
+}

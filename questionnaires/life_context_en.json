@@ -1,0 +1,121 @@
+{
+  "title": "Personal Life Context Questionnaire",
+  "description": "Please freely describe your daily life and preferences. This information helps us understand your unique identity.",
+  "sections": [
+    {
+      "id": "preferences",
+      "title": "Preferences",
+      "questions": [
+        {
+          "id": "loves",
+          "question": "List 5 things you love",
+          "instruction": "These can be hobbies, activities, foods, music, movies, books, places, etc. Please be specific.",
+          "type": "list",
+          "count": 5,
+          "examples": [
+            "Example: Reading books by the window on rainy days",
+            "Example: Jogging at dawn",
+            "Example: Playing board games with friends",
+            "Example: Listening to jazz music",
+            "Example: Planning international trips"
+          ]
+        },
+        {
+          "id": "hates",
+          "question": "List 5 things you hate",
+          "instruction": "These can be uncomfortable situations, disliked activities, foods, environments, etc. Please be honest.",
+          "type": "list",
+          "count": 5,
+          "examples": [
+            "Example: Noisy places",
+            "Example: Moving without a plan",
+            "Example: Waking up late",
+            "Example: Public speaking",
+            "Example: Spicy food"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daily_routines",
+      "title": "Daily Routines",
+      "questions": [
+        {
+          "id": "weekday_routine",
+          "question": "Describe your typical weekday in detail",
+          "instruction": "Please describe your typical weekday from the time you wake up until you go to bed. We recommend writing at least 450 characters.",
+          "type": "essay",
+          "min_chars": 450,
+          "prompts": [
+            "What time do you wake up?",
+            "What is your morning routine?",
+            "How do you commute to work/school?",
+            "How do you spend your daytime?",
+            "How do you have lunch?",
+            "What do you do after work/school?",
+            "How do you spend your evening?",
+            "What is your bedtime routine?",
+            "What time do you go to bed?"
+          ],
+          "example": "On weekdays, I usually wake up at 6:30 AM when my alarm goes off. I immediately make my bed, wash my face and brush my teeth in the bathroom, then do about 15 minutes of light stretching. For breakfast, I typically have toast and coffee while organizing my tasks for the day. I leave home around 8 AM and take the subway to work, during which I listen to podcasts or read the news. I arrive at the office and start work at 9 AM. At noon, I have lunch with colleagues at a nearby restaurant. In the afternoon, I alternate between meetings and project work, then leave the office around 6 PM. I get home around 7 PM, take a quick shower, and prepare dinner. While eating dinner, I watch YouTube or Netflix. From 9 PM to 11 PM, I engage in personal study or hobbies. Before bed, I read for about 30 minutes and go to sleep around midnight."
+        },
+        {
+          "id": "weekend_routine",
+          "question": "Describe your typical weekend in detail",
+          "instruction": "Please describe your typical weekend routine, which may differ from weekdays. If Saturday and Sunday are different, you can choose one or describe both. We recommend writing at least 450 characters.",
+          "type": "essay",
+          "min_chars": 450,
+          "prompts": [
+            "What time do you wake up on weekends?",
+            "How do you spend your morning?",
+            "What are your main weekend activities?",
+            "Who do you spend time with?",
+            "How do you handle meals?",
+            "What do you do during leisure time?",
+            "Do you have any special weekend-only routines?",
+            "How do you spend Sunday evening?"
+          ],
+          "example": "On weekends, I wake up naturally without an alarm, usually around 9 AM. I slowly get up and leisurely prepare brunch. On weekend mornings, I make things I don't usually eat during the week, like pancakes or eggs benedict, while playing my favorite music. In the morning, I catch up on household chores or do laundry. Around 11 AM, I head to the gym for a workout. After exercising for about an hour, I come home and shower, then around 2 PM, I either meet friends or spend personal time at a café. When meeting friends, we usually explore new restaurants or watch movies. Around 6 PM, I return home for a simple dinner, then binge-watch series I've missed or play video games. On Sunday evening, I prepare for the coming week by planning my schedule and organizing necessary items. On weekends, I go to bed a bit later than weekdays, around 1 AM."
+        }
+      ]
+    },
+    {
+      "id": "additional_context",
+      "title": "Additional Context (Optional)",
+      "questions": [
+        {
+          "id": "life_motto",
+          "question": "Do you have a life motto or personal mantra?",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "id": "typical_weekday",
+          "question": "If you could describe your 'typical weekday' in one word, what would it be?",
+          "type": "text",
+          "optional": true,
+          "hint": "e.g., Busy, Structured, Challenging, Peaceful, etc."
+        },
+        {
+          "id": "typical_weekend",
+          "question": "If you could describe your 'typical weekend' in one word, what would it be?",
+          "type": "text",
+          "optional": true,
+          "hint": "e.g., Relaxing, Active, Social, Quiet, etc."
+        },
+        {
+          "id": "stress_relief",
+          "question": "How do you typically relieve stress?",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "id": "comfort_activity",
+          "question": "What moment or activity makes you feel most comfortable?",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    }
+  ]
+}

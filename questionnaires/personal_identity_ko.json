@@ -1,0 +1,352 @@
+{
+  "title": "개인적 정체성 설문 (Personal Identity)",
+  "description": "귀하의 성격 특성과 가치관을 측정합니다. 각 문항에 대해 귀하가 얼마나 동의하는지 1-7점 척도로 응답해주세요.",
+  "sections": [
+    {
+      "id": "bfi_2_s",
+      "title": "BFI-2-S 성격 검사",
+      "instruction": "다음 문장들을 읽고, 각 문장이 귀하를 얼마나 잘 설명하는지 평가해주세요.",
+      "scale": {
+        "1": "전혀 동의하지 않음",
+        "2": "대체로 동의하지 않음",
+        "3": "약간 동의하지 않음",
+        "4": "중립",
+        "5": "약간 동의함",
+        "6": "대체로 동의함",
+        "7": "매우 동의함"
+      },
+      "questions": [
+        {
+          "id": "bfi_1",
+          "domain": "Extraversion",
+          "facet": "Sociability",
+          "text": "나는 외향적이고 열정적이다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_2",
+          "domain": "Agreeableness",
+          "facet": "Compassion",
+          "text": "나는 다른 사람들에게 동정심과 친절함을 느낀다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_3",
+          "domain": "Conscientiousness",
+          "facet": "Organization",
+          "text": "나는 체계적이고 정돈된 것을 좋아한다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_4",
+          "domain": "Negative Emotionality",
+          "facet": "Anxiety",
+          "text": "나는 걱정을 많이 하는 편이다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_5",
+          "domain": "Open-Mindedness",
+          "facet": "Intellectual Curiosity",
+          "text": "나는 복잡한 문제에 대해 깊이 생각하기를 즐긴다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_6",
+          "domain": "Extraversion",
+          "facet": "Assertiveness",
+          "text": "나는 다른 사람들을 지배하고 주도하는 경향이 있다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_7",
+          "domain": "Agreeableness",
+          "facet": "Respectfulness",
+          "text": "나는 다른 사람들을 존중하고 예의 바르게 대한다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_8",
+          "domain": "Conscientiousness",
+          "facet": "Productiveness",
+          "text": "나는 일을 효율적으로 끝내는 경향이 있다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_9",
+          "domain": "Negative Emotionality",
+          "facet": "Depression",
+          "text": "나는 종종 우울하고 침울한 기분을 느낀다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_10",
+          "domain": "Open-Mindedness",
+          "facet": "Creative Imagination",
+          "text": "나는 상상력이 풍부하고 창의적이다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_11",
+          "domain": "Extraversion",
+          "facet": "Energy Level",
+          "text": "나는 활동적이고 에너지가 넘친다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_12",
+          "domain": "Agreeableness",
+          "facet": "Trust",
+          "text": "나는 대부분의 사람들이 기본적으로 선하다고 믿는다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_13",
+          "domain": "Conscientiousness",
+          "facet": "Responsibility",
+          "text": "나는 신뢰할 수 있고 항상 믿음직하다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_14",
+          "domain": "Negative Emotionality",
+          "facet": "Emotional Volatility",
+          "text": "나는 감정 기복이 심하고 기분이 자주 변한다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_15",
+          "domain": "Open-Mindedness",
+          "facet": "Aesthetic Sensitivity",
+          "text": "나는 예술과 아름다움에 관심이 많다.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_16",
+          "domain": "Extraversion",
+          "facet": "Sociability",
+          "text": "나는 조용하고 수줍음을 많이 탄다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_17",
+          "domain": "Agreeableness",
+          "facet": "Compassion",
+          "text": "나는 다른 사람들에게 무관심하고 냉담하다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_18",
+          "domain": "Conscientiousness",
+          "facet": "Organization",
+          "text": "나는 지저분하고 어지럽게 둔다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_19",
+          "domain": "Negative Emotionality",
+          "facet": "Anxiety",
+          "text": "나는 대체로 편안하고 스트레스를 잘 받지 않는다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_20",
+          "domain": "Open-Mindedness",
+          "facet": "Intellectual Curiosity",
+          "text": "나는 추상적이고 이론적인 아이디어에 관심이 별로 없다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_21",
+          "domain": "Extraversion",
+          "facet": "Assertiveness",
+          "text": "나는 다른 사람들이 주도하도록 내버려 둔다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_22",
+          "domain": "Agreeableness",
+          "facet": "Respectfulness",
+          "text": "나는 다른 사람들에게 무례하고 버릇없이 대하는 경향이 있다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_23",
+          "domain": "Conscientiousness",
+          "facet": "Productiveness",
+          "text": "나는 일을 미루고 게으름을 피우는 경향이 있다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_24",
+          "domain": "Negative Emotionality",
+          "facet": "Depression",
+          "text": "나는 정서적으로 안정되어 있고 쉽게 화를 내지 않는다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_25",
+          "domain": "Open-Mindedness",
+          "facet": "Creative Imagination",
+          "text": "나는 예술적이거나 창의적인 관심사가 거의 없다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_26",
+          "domain": "Extraversion",
+          "facet": "Energy Level",
+          "text": "나는 활기가 없고 느린 편이다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_27",
+          "domain": "Agreeableness",
+          "facet": "Trust",
+          "text": "나는 다른 사람들의 의도를 의심하는 경향이 있다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_28",
+          "domain": "Conscientiousness",
+          "facet": "Responsibility",
+          "text": "나는 때때로 무책임하고 신뢰할 수 없다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_29",
+          "domain": "Negative Emotionality",
+          "facet": "Emotional Volatility",
+          "text": "나는 감정적으로 안정되어 있고 기분이 쉽게 변하지 않는다.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_30",
+          "domain": "Open-Mindedness",
+          "facet": "Aesthetic Sensitivity",
+          "text": "나는 예술이나 미적인 경험에 관심이 없다.",
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "pvq",
+      "title": "PVQ 가치관 검사",
+      "instruction": "다음은 여러 사람들에 대한 간단한 설명입니다. 각 설명을 읽고, 그 사람이 귀하와 얼마나 비슷한지 평가해주세요.",
+      "scale": {
+        "1": "나와 전혀 비슷하지 않음",
+        "2": "나와 비슷하지 않음",
+        "3": "나와 약간 비슷하지 않음",
+        "4": "나와 약간 비슷함",
+        "5": "나와 비슷함",
+        "6": "나와 매우 비슷함"
+      },
+      "questions": [
+        {
+          "id": "pvq_1",
+          "value_type": "Self-Direction",
+          "text": "새로운 아이디어를 생각해내고 창의적인 것이 이 사람에게 중요하다. 이 사람은 자신만의 독창적인 방식으로 일하기를 좋아한다."
+        },
+        {
+          "id": "pvq_2",
+          "value_type": "Power",
+          "text": "부유한 것이 이 사람에게 중요하다. 이 사람은 많은 돈과 값비싼 물건을 갖고 싶어한다."
+        },
+        {
+          "id": "pvq_3",
+          "value_type": "Universalism",
+          "text": "모든 사람이 세상에서 평등한 기회를 가져야 한다고 생각하는 것이 이 사람에게 중요하다. 이 사람은 모든 사람을 위한 정의를 믿는다."
+        },
+        {
+          "id": "pvq_4",
+          "value_type": "Achievement",
+          "text": "자신의 능력을 보여주는 것이 이 사람에게 중요하다. 이 사람은 사람들이 자신이 하는 일을 칭찬하기를 원한다."
+        },
+        {
+          "id": "pvq_5",
+          "value_type": "Security",
+          "text": "안전한 환경에서 사는 것이 이 사람에게 중요하다. 이 사람은 자신의 안전을 위협할 수 있는 것들을 피한다."
+        },
+        {
+          "id": "pvq_6",
+          "value_type": "Stimulation",
+          "text": "이 사람은 모험과 위험을 감수하는 것을 좋아한다. 이 사람은 흥미진진한 삶을 원한다."
+        },
+        {
+          "id": "pvq_7",
+          "value_type": "Conformity",
+          "text": "항상 올바르게 행동하는 것이 이 사람에게 중요하다. 이 사람은 사람들이 잘못되었다고 말할 행동을 하지 않으려 한다."
+        },
+        {
+          "id": "pvq_8",
+          "value_type": "Tradition",
+          "text": "전통적인 가치관을 따르는 것이 이 사람에게 중요하다. 이 사람은 종교나 가족이 물려준 관습과 전통을 지킨다."
+        },
+        {
+          "id": "pvq_9",
+          "value_type": "Benevolence",
+          "text": "주변 사람들을 돕는 것이 이 사람에게 중요하다. 이 사람은 그들의 복지를 돌보기를 원한다."
+        },
+        {
+          "id": "pvq_10",
+          "value_type": "Hedonism",
+          "text": "인생을 즐기는 것이 이 사람에게 중요하다. 이 사람은 자신을 기쁘게 하는 시간을 갖기를 좋아한다."
+        },
+        {
+          "id": "pvq_11",
+          "value_type": "Self-Direction",
+          "text": "스스로 결정을 내리고 자유로운 것이 이 사람에게 중요하다. 이 사람은 다른 사람에게 의존하지 않기를 좋아한다."
+        },
+        {
+          "id": "pvq_12",
+          "value_type": "Universalism",
+          "text": "자연과 환경을 돌보는 것이 이 사람에게 중요하다. 이 사람은 자연을 보호하기를 원한다."
+        },
+        {
+          "id": "pvq_13",
+          "value_type": "Power",
+          "text": "다른 사람들을 이끄는 것이 이 사람에게 중요하다. 이 사람은 사람들이 자신이 말하는 것을 따르기를 원한다."
+        },
+        {
+          "id": "pvq_14",
+          "value_type": "Achievement",
+          "text": "성공하는 것이 이 사람에게 중요하다. 이 사람은 다른 사람들로부터 인정받기를 원한다."
+        },
+        {
+          "id": "pvq_15",
+          "value_type": "Security",
+          "text": "정부가 자신을 모든 위협으로부터 보호해주는 것이 이 사람에게 중요하다. 이 사람은 강력한 국가가 국민을 지켜주기를 원한다."
+        },
+        {
+          "id": "pvq_16",
+          "value_type": "Stimulation",
+          "text": "삶에서 놀라움을 찾는 것이 이 사람에게 중요하다. 이 사람은 새롭고 다른 것들을 하는 것을 좋아한다."
+        },
+        {
+          "id": "pvq_17",
+          "value_type": "Benevolence",
+          "text": "친구들에게 충실한 것이 이 사람에게 중요하다. 이 사람은 가까운 사람들을 위해 헌신하고 싶어한다."
+        },
+        {
+          "id": "pvq_18",
+          "value_type": "Conformity",
+          "text": "사회의 규칙을 따르는 것이 이 사람에게 중요하다. 이 사람은 법을 어기는 행동을 절대 하지 않으려 한다."
+        },
+        {
+          "id": "pvq_19",
+          "value_type": "Tradition",
+          "text": "겸손하고 검소한 것이 이 사람에게 중요하다. 이 사람은 자신에게 관심을 끌거나 눈에 띄려 하지 않는다."
+        },
+        {
+          "id": "pvq_20",
+          "value_type": "Universalism",
+          "text": "세상 모든 사람들과 잘 지내는 것이 이 사람에게 중요하다. 이 사람은 모든 사람의 복지를 증진하는 것을 믿는다."
+        },
+        {
+          "id": "pvq_21",
+          "value_type": "Hedonism",
+          "text": "삶의 모든 즐거움을 누리는 것이 이 사람에게 중요하다. 이 사람은 자신을 만족시킬 수 있는 모든 기회를 찾는다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPeCtrum 설문조사</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .scale-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .scale-option {
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .scale-option input[type="radio"] {
+            display: none;
+        }
+
+        .scale-option label {
+            display: block;
+            padding: 12px;
+            background: #f0f0f0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .scale-option input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .scale-option label:hover {
+            border-color: #667eea;
+        }
+
+        .scale-legend {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        .list-input {
+            margin-bottom: 10px;
+        }
+
+        .list-input input {
+            margin-top: 5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(17, 153, 142, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .completion-message {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .completion-message h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .completion-message p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .char-count.warning {
+            color: #e74c3c;
+        }
+
+        .example {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 SPeCtrum</h1>
+            <p>다차원적 정체성 표현 프레임워크</p>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="content">
+            <!-- Welcome Section -->
+            <div class="section active" id="section-0">
+                <div class="section-title">환영합니다! 👋</div>
+                <div style="padding: 20px;">
+                    <h3 style="margin-bottom: 15px;">SPeCtrum 설문조사에 참여해주셔서 감사합니다.</h3>
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        이 설문조사는 귀하의 다차원적 정체성을 이해하기 위해 설계되었습니다.
+                        총 3개 섹션으로 구성되어 있으며, 완료하는 데 약 1시간 정도 소요됩니다.
+                    </p>
+
+                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <h4 style="color: #667eea; margin-bottom: 10px;">📋 설문 구성</h4>
+                        <ul style="list-style-position: inside; line-height: 2;">
+                            <li><strong>섹션 1:</strong> 사회적 정체성 (약 10분)</li>
+                            <li><strong>섹션 2:</strong> 개인적 정체성 - 성격 및 가치관 (약 20분)</li>
+                            <li><strong>섹션 3:</strong> 개인 생활 맥락 (약 30분)</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <h4 style="color: #856404; margin-bottom: 10px;">💡 응답 가이드</h4>
+                        <ul style="list-style-position: inside; line-height: 2;">
+                            <li>솔직하고 정직하게 답변해주세요</li>
+                            <li>정답은 없습니다. 귀하의 생각을 그대로 표현해주세요</li>
+                            <li>구체적으로 작성할수록 더 정확한 프로필이 만들어집니다</li>
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 20px; color: #7f8c8d; font-size: 0.9em;">
+                        🔒 모든 응답은 익명으로 처리되며, 연구 목적으로만 사용됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 1: Social Identity -->
+            <div class="section" id="section-1">
+                <div class="section-title">섹션 1: 사회적 정체성</div>
+                <p style="margin-bottom: 30px; color: #7f8c8d;">
+                    귀하의 인구통계학적 정보를 수집합니다. 편안하게 응답해주세요.
+                </p>
+
+                <div class="question">
+                    <div class="question-text">1. 귀하의 연령대는 어떻게 되십니까?</div>
+                    <div class="hint">예: 20대, 30대, 또는 구체적 나이</div>
+                    <input type="text" id="age" placeholder="연령대를 입력해주세요">
+                </div>
+
+                <div class="question">
+                    <div class="question-text">2. 귀하의 생물학적 성별은 무엇입니까?</div>
+                    <select id="sex">
+                        <option value="">선택해주세요</option>
+                        <option value="남성">남성</option>
+                        <option value="여성">여성</option>
+                        <option value="기타">기타</option>
+                        <option value="응답 거부">응답 거부</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">3. 귀하의 현재 직업 상태는 무엇입니까?</div>
+                    <select id="occupation">
+                        <option value="">선택해주세요</option>
+                        <option value="전일제 근무">전일제 근무 (주 35시간 이상)</option>
+                        <option value="시간제 근무">시간제 근무 (주 35시간 미만)</option>
+                        <option value="자영업">자영업</option>
+                        <option value="학생">학생</option>
+                        <option value="구직 중">구직 중</option>
+                        <option value="은퇴">은퇴</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 20px;">
+                    💾 실제 구현 시에는 모든 21개 질문이 표시됩니다.
+                </p>
+            </div>
+
+            <!-- Section 2: Personal Identity -->
+            <div class="section" id="section-2">
+                <div class="section-title">섹션 2: 개인적 정체성 - 성격</div>
+                <p style="margin-bottom: 30px; color: #7f8c8d;">
+                    다음 문장들을 읽고, 각 문장이 귀하를 얼마나 잘 설명하는지 1-7점 척도로 평가해주세요.
+                </p>
+
+                <div class="question">
+                    <div class="question-text">1. 나는 외향적이고 열정적이다.</div>
+                    <div class="scale-options">
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="1" id="bfi_1_1">
+                            <label for="bfi_1_1">1</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="2" id="bfi_1_2">
+                            <label for="bfi_1_2">2</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="3" id="bfi_1_3">
+                            <label for="bfi_1_3">3</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="4" id="bfi_1_4">
+                            <label for="bfi_1_4">4</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="5" id="bfi_1_5">
+                            <label for="bfi_1_5">5</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="6" id="bfi_1_6">
+                            <label for="bfi_1_6">6</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_1" value="7" id="bfi_1_7">
+                            <label for="bfi_1_7">7</label>
+                        </div>
+                    </div>
+                    <div class="scale-legend">
+                        <span>전혀 동의하지 않음</span>
+                        <span>중립</span>
+                        <span>매우 동의함</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">2. 나는 다른 사람들에게 동정심과 친절함을 느낀다.</div>
+                    <div class="scale-options">
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="1" id="bfi_2_1">
+                            <label for="bfi_2_1">1</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="2" id="bfi_2_2">
+                            <label for="bfi_2_2">2</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="3" id="bfi_2_3">
+                            <label for="bfi_2_3">3</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="4" id="bfi_2_4">
+                            <label for="bfi_2_4">4</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="5" id="bfi_2_5">
+                            <label for="bfi_2_5">5</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="6" id="bfi_2_6">
+                            <label for="bfi_2_6">6</label>
+                        </div>
+                        <div class="scale-option">
+                            <input type="radio" name="bfi_2" value="7" id="bfi_2_7">
+                            <label for="bfi_2_7">7</label>
+                        </div>
+                    </div>
+                    <div class="scale-legend">
+                        <span>전혀 동의하지 않음</span>
+                        <span>중립</span>
+                        <span>매우 동의함</span>
+                    </div>
+                </div>
+
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 20px;">
+                    💾 실제 구현 시에는 BFI-2-S 30문항 + PVQ 21문항이 표시됩니다.
+                </p>
+            </div>
+
+            <!-- Section 3: Life Context -->
+            <div class="section" id="section-3">
+                <div class="section-title">섹션 3: 개인 생활 맥락</div>
+                <p style="margin-bottom: 30px; color: #7f8c8d;">
+                    귀하의 일상 생활과 선호도에 대해 자유롭게 작성해주세요.
+                </p>
+
+                <div class="question">
+                    <div class="question-text">귀하가 좋아하는 것 5가지를 나열해주세요</div>
+                    <div class="hint">취미, 활동, 음식, 음악, 영화, 책, 장소 등 구체적으로 작성해주세요</div>
+                    <div class="list-input">
+                        <div style="margin-bottom: 8px;">1. <input type="text" id="love_1" placeholder="예: 비 오는 날 창가에서 책 읽기"></div>
+                        <div style="margin-bottom: 8px;">2. <input type="text" id="love_2" placeholder="예: 새벽에 조깅하기"></div>
+                        <div style="margin-bottom: 8px;">3. <input type="text" id="love_3" placeholder="예: 친구들과 보드게임 하기"></div>
+                        <div style="margin-bottom: 8px;">4. <input type="text" id="love_4" placeholder="예: 재즈 음악 듣기"></div>
+                        <div style="margin-bottom: 8px;">5. <input type="text" id="love_5" placeholder="예: 해외 여행 계획 세우기"></div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">평일 하루 일과를 상세히 설명해주세요</div>
+                    <div class="hint">아침에 일어나는 시간부터 잠들기 전까지 전형적인 평일 일과를 작성해주세요 (최소 450자 권장)</div>
+                    <textarea id="weekday_routine" placeholder="예시: 평일에는 보통 오전 6시 30분에 알람이 울리면 일어납니다..."></textarea>
+                    <div class="char-count" id="weekday_count">0 / 450자</div>
+
+                    <div class="example">
+                        <div class="example-title">✍️ 작성 예시</div>
+                        평일에는 보통 오전 6시 30분에 알람이 울리면 일어납니다. 일어나자마자 침대를 정리하고, 화장실에서 세수와 양치를 한 후 간단한 스트레칭을 15분 정도 합니다. 아침 식사로는 주로 토스트와 커피를 먹으며, 그날 해야 할 일들을 정리합니다...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completion Section -->
+            <div class="section" id="section-complete">
+                <div class="completion-message">
+                    <h2>🎉 설문 완료!</h2>
+                    <p>소중한 시간을 내어 설문에 참여해주셔서 진심으로 감사드립니다.</p>
+                    <p style="font-size: 0.9em;">귀하의 응답은 안전하게 저장되었습니다.</p>
+                    <button class="btn-success" onclick="downloadData()">📥 응답 데이터 다운로드</button>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="btn-secondary" id="prevBtn" onclick="changeSection(-1)" style="display: none;">이전</button>
+                <button class="btn-primary" id="nextBtn" onclick="changeSection(1)">시작하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const totalSections = 5; // Welcome + 3 sections + Complete
+
+        // Update character count for textarea
+        document.getElementById('weekday_routine')?.addEventListener('input', function() {
+            const count = this.value.length;
+            const countEl = document.getElementById('weekday_count');
+            countEl.textContent = `${count} / 450자`;
+            if (count < 450) {
+                countEl.classList.add('warning');
+            } else {
+                countEl.classList.remove('warning');
+            }
+        });
+
+        function changeSection(direction) {
+            const sections = document.querySelectorAll('.section');
+            sections[currentSection].classList.remove('active');
+
+            currentSection += direction;
+
+            if (currentSection < 0) currentSection = 0;
+            if (currentSection >= totalSections) currentSection = totalSections - 1;
+
+            sections[currentSection].classList.add('active');
+            updateButtons();
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (currentSection === 0) {
+                prevBtn.style.display = 'none';
+                nextBtn.textContent = '시작하기';
+            } else if (currentSection === totalSections - 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+                nextBtn.style.display = 'block';
+                nextBtn.textContent = currentSection === totalSections - 2 ? '제출하기' : '다음';
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentSection / (totalSections - 1)) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function downloadData() {
+            const data = {
+                timestamp: new Date().toISOString(),
+                social_identity: {
+                    age: document.getElementById('age')?.value || '',
+                    sex: document.getElementById('sex')?.value || '',
+                    occupation: document.getElementById('occupation')?.value || ''
+                },
+                personal_identity: {
+                    bfi_responses: {
+                        bfi_1: document.querySelector('input[name="bfi_1"]:checked')?.value || '',
+                        bfi_2: document.querySelector('input[name="bfi_2"]:checked')?.value || ''
+                    }
+                },
+                life_context: {
+                    loves: [
+                        document.getElementById('love_1')?.value || '',
+                        document.getElementById('love_2')?.value || '',
+                        document.getElementById('love_3')?.value || '',
+                        document.getElementById('love_4')?.value || '',
+                        document.getElementById('love_5')?.value || ''
+                    ],
+                    weekday_routine: document.getElementById('weekday_routine')?.value || ''
+                }
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `spectrum_survey_${Date.now()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize
+        updateButtons();
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPeCtrum Survey | SPeCtrum 설문조사</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Welcome Page -->
+        <div class="page active" id="page-0">
+            <div class="header">
+                <h1>SPeCtrum Framework Survey</h1>
+                <h1 class="ko">SPeCtrum 프레임워크 설문조사</h1>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="section">
+                <h2>Research Overview / 연구 개요</h2>
+                <p>
+                    This survey is part of the SPeCtrum framework research, which aims to create
+                    authentic multidimensional personas using Large Language Models (LLMs).
+                </p>
+                <p class="ko">
+                    본 설문조사는 대규모 언어 모델(LLM)을 사용하여 진정한 다차원적 페르소나를
+                    생성하는 SPeCtrum 프레임워크 연구의 일부입니다.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>Survey Structure / 설문 구조</h3>
+                <ul>
+                    <li>• Section 1: Social Identity (S) - Demographics (약 10분)</li>
+                    <li>• Section 2: Personal Identity (P) - Personality & Values (약 20분)</li>
+                    <li>• Section 3: Life Context (C) - Daily Routines & Preferences (약 30분)</li>
+                </ul>
+                <p><strong>Total estimated time / 총 소요 시간: 60-90 minutes / 60-90분</strong></p>
+            </div>
+
+            <div class="section">
+                <h3>Privacy & Data Use / 개인정보 보호 및 데이터 사용</h3>
+                <ul>
+                    <li>• All responses are anonymous / 모든 응답은 익명으로 처리됩니다</li>
+                    <li>• Data will be used for research purposes only / 데이터는 연구 목적으로만 사용됩니다</li>
+                    <li>• You can withdraw at any time / 언제든지 참여를 철회할 수 있습니다</li>
+                </ul>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="consent-box">
+                <h3>Informed Consent / 연구 참여 동의</h3>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="consent" required>
+                    <span>
+                        I have read and understood the above information, and I agree to participate in this study.
+                        <br><span class="ko">위 내용을 읽고 이해하였으며, 본 연구에 참여하는 것에 동의합니다.</span>
+                    </span>
+                </label>
+            </div>
+
+            <button class="btn-next" onclick="nextPage()" id="startBtn" disabled>
+                Start / 시작하기
+            </button>
+        </div>
+
+        <!-- Section 1: Social Identity -->
+        <div class="page" id="page-1">
+            <div class="header">
+                <h2>Section 1: Social Identity</h2>
+                <h2 class="ko">섹션 1: 사회적 정체성</h2>
+                <p class="page-indicator">1 / 3</p>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <p class="instruction">
+                Please provide your demographic information. All information will be kept confidential.
+                <br><span class="ko">귀하의 인구통계학적 정보를 제공해주세요. 모든 정보는 비밀로 유지됩니다.</span>
+            </p>
+
+            <div class="question">
+                <label>
+                    <strong>1. Age / 연령</strong>
+                    <input type="text" id="age" placeholder="e.g., 20s, 30s, or specific age">
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>2. Sex / 생물학적 성별</strong>
+                    <select id="sex">
+                        <option value="">Please select / 선택해주세요</option>
+                        <option value="Male">Male / 남성</option>
+                        <option value="Female">Female / 여성</option>
+                        <option value="Other">Other / 기타</option>
+                        <option value="Prefer not to say">Prefer not to say / 응답 거부</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>3. Gender Identity / 성 정체성</strong>
+                    <select id="gender">
+                        <option value="">Please select / 선택해주세요</option>
+                        <option value="Man">Man / 남성</option>
+                        <option value="Woman">Woman / 여성</option>
+                        <option value="Non-binary">Non-binary / 논바이너리</option>
+                        <option value="Other">Other / 기타</option>
+                        <option value="Prefer not to say">Prefer not to say / 응답 거부</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>4. Nationality / 국적</strong>
+                    <input type="text" id="nationality" placeholder="e.g., South Korea, United States">
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>5. Education / 학력</strong>
+                    <select id="education">
+                        <option value="">Please select / 선택해주세요</option>
+                        <option value="High school or less">High school or less / 고등학교 이하</option>
+                        <option value="Some college">Some college / 대학 재학</option>
+                        <option value="Bachelor's degree">Bachelor's degree / 학사</option>
+                        <option value="Master's degree">Master's degree / 석사</option>
+                        <option value="Doctorate">Doctorate / 박사</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>6. Occupation / 직업</strong>
+                    <input type="text" id="occupation" placeholder="e.g., Software Developer, Student">
+                </label>
+            </div>
+
+            <div class="note">
+                <em>Note: In the full version, all 21 demographic questions will be displayed.</em>
+                <br><em class="ko">참고: 전체 버전에서는 21개의 인구통계학적 질문이 표시됩니다.</em>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevPage()">← Previous / 이전</button>
+                <button class="btn-next" onclick="nextPage()">Next / 다음 →</button>
+            </div>
+        </div>
+
+        <!-- Section 2: Personal Identity -->
+        <div class="page" id="page-2">
+            <div class="header">
+                <h2>Section 2: Personal Identity - Personality</h2>
+                <h2 class="ko">섹션 2: 개인적 정체성 - 성격</h2>
+                <p class="page-indicator">2 / 3</p>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <p class="instruction">
+                Rate how much you agree with each statement (1 = Strongly disagree, 7 = Strongly agree)
+                <br><span class="ko">각 문장에 얼마나 동의하는지 평가해주세요 (1 = 전혀 동의하지 않음, 7 = 매우 동의함)</span>
+            </p>
+
+            <div class="question">
+                <p><strong>1. I am outgoing and enthusiastic.</strong></p>
+                <p class="ko">나는 외향적이고 열정적이다.</p>
+                <div class="scale">
+                    <label><input type="radio" name="bfi_1" value="1"> 1</label>
+                    <label><input type="radio" name="bfi_1" value="2"> 2</label>
+                    <label><input type="radio" name="bfi_1" value="3"> 3</label>
+                    <label><input type="radio" name="bfi_1" value="4"> 4</label>
+                    <label><input type="radio" name="bfi_1" value="5"> 5</label>
+                    <label><input type="radio" name="bfi_1" value="6"> 6</label>
+                    <label><input type="radio" name="bfi_1" value="7"> 7</label>
+                </div>
+                <div class="scale-labels">
+                    <span>Strongly disagree<br>전혀 동의하지 않음</span>
+                    <span>Neutral<br>중립</span>
+                    <span>Strongly agree<br>매우 동의함</span>
+                </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2. I feel sympathy and kindness toward others.</strong></p>
+                <p class="ko">나는 다른 사람들에게 동정심과 친절함을 느낀다.</p>
+                <div class="scale">
+                    <label><input type="radio" name="bfi_2" value="1"> 1</label>
+                    <label><input type="radio" name="bfi_2" value="2"> 2</label>
+                    <label><input type="radio" name="bfi_2" value="3"> 3</label>
+                    <label><input type="radio" name="bfi_2" value="4"> 4</label>
+                    <label><input type="radio" name="bfi_2" value="5"> 5</label>
+                    <label><input type="radio" name="bfi_2" value="6"> 6</label>
+                    <label><input type="radio" name="bfi_2" value="7"> 7</label>
+                </div>
+                <div class="scale-labels">
+                    <span>Strongly disagree<br>전혀 동의하지 않음</span>
+                    <span>Neutral<br>중립</span>
+                    <span>Strongly agree<br>매우 동의함</span>
+                </div>
+            </div>
+
+            <div class="note">
+                <em>Note: In the full version, all 30 BFI-2-S items and 21 PVQ items will be displayed.</em>
+                <br><em class="ko">참고: 전체 버전에서는 BFI-2-S 30문항과 PVQ 21문항이 모두 표시됩니다.</em>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevPage()">← Previous / 이전</button>
+                <button class="btn-next" onclick="nextPage()">Next / 다음 →</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Life Context -->
+        <div class="page" id="page-3">
+            <div class="header">
+                <h2>Section 3: Life Context</h2>
+                <h2 class="ko">섹션 3: 개인 생활 맥락</h2>
+                <p class="page-indicator">3 / 3</p>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <p class="instruction">
+                Please describe your daily life and preferences in detail.
+                <br><span class="ko">귀하의 일상 생활과 선호도를 자세히 설명해주세요.</span>
+            </p>
+
+            <div class="question">
+                <label>
+                    <strong>List 5 things you love / 좋아하는 것 5가지</strong>
+                    <p class="hint">Be specific (e.g., "Reading mystery novels by the window on rainy days")</p>
+                    <input type="text" id="love_1" placeholder="1. ">
+                    <input type="text" id="love_2" placeholder="2. ">
+                    <input type="text" id="love_3" placeholder="3. ">
+                    <input type="text" id="love_4" placeholder="4. ">
+                    <input type="text" id="love_5" placeholder="5. ">
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>List 5 things you hate / 싫어하는 것 5가지</strong>
+                    <p class="hint">Be honest (e.g., "Crowded places", "Waking up early")</p>
+                    <input type="text" id="hate_1" placeholder="1. ">
+                    <input type="text" id="hate_2" placeholder="2. ">
+                    <input type="text" id="hate_3" placeholder="3. ">
+                    <input type="text" id="hate_4" placeholder="4. ">
+                    <input type="text" id="hate_5" placeholder="5. ">
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>Describe your typical weekday routine / 평일 일과를 설명해주세요</strong>
+                    <p class="hint">From wake-up to bedtime, include specific times and activities (minimum 450 characters recommended)</p>
+                    <textarea id="weekday_routine" rows="8" placeholder="Example: On weekdays, I usually wake up at 6:30 AM..."></textarea>
+                    <div class="char-count" id="weekdayCount">0 / 450 characters</div>
+                </label>
+            </div>
+
+            <div class="question">
+                <label>
+                    <strong>Describe your typical weekend routine / 주말 일과를 설명해주세요</strong>
+                    <p class="hint">How do you spend your weekends? (minimum 450 characters recommended)</p>
+                    <textarea id="weekend_routine" rows="8" placeholder="Example: On weekends, I wake up naturally around 9 AM..."></textarea>
+                    <div class="char-count" id="weekendCount">0 / 450 characters</div>
+                </label>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevPage()">← Previous / 이전</button>
+                <button class="btn-next" onclick="submitSurvey()">Submit / 제출하기 ✓</button>
+            </div>
+        </div>
+
+        <!-- Completion Page -->
+        <div class="page" id="page-complete">
+            <div class="header">
+                <h1>Thank you! / 감사합니다!</h1>
+            </div>
+
+            <div class="divider">=====================================</div>
+
+            <div class="completion-message">
+                <p>
+                    Your responses have been recorded. Thank you for participating in the SPeCtrum research!
+                </p>
+                <p class="ko">
+                    귀하의 응답이 기록되었습니다. SPeCtrum 연구에 참여해주셔서 감사합니다!
+                </p>
+
+                <div class="download-section">
+                    <p><strong>Download your data / 데이터 다운로드:</strong></p>
+                    <button class="btn-download" onclick="downloadData()">
+                        📥 Download Response Data / 응답 데이터 다운로드
+                    </button>
+                </div>
+
+                <div class="info-box">
+                    <p>
+                        <strong>What's next? / 다음 단계는?</strong><br>
+                        Your data will be processed through the SPeCtrum framework to create a multidimensional persona profile.
+                    </p>
+                    <p class="ko">
+                        귀하의 데이터는 SPeCtrum 프레임워크를 통해 처리되어 다차원적 페르소나 프로필이 생성됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="divider">=====================================</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

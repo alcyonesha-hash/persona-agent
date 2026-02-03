@@ -1,0 +1,352 @@
+{
+  "title": "Personal Identity Questionnaire",
+  "description": "This questionnaire measures your personality traits and values. Please rate each item on a 1-7 scale based on how much you agree.",
+  "sections": [
+    {
+      "id": "bfi_2_s",
+      "title": "BFI-2-S Personality Inventory",
+      "instruction": "Read each statement and rate how well it describes you.",
+      "scale": {
+        "1": "Strongly disagree",
+        "2": "Disagree",
+        "3": "Somewhat disagree",
+        "4": "Neutral",
+        "5": "Somewhat agree",
+        "6": "Agree",
+        "7": "Strongly agree"
+      },
+      "questions": [
+        {
+          "id": "bfi_1",
+          "domain": "Extraversion",
+          "facet": "Sociability",
+          "text": "I am outgoing and enthusiastic.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_2",
+          "domain": "Agreeableness",
+          "facet": "Compassion",
+          "text": "I feel sympathy and kindness toward others.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_3",
+          "domain": "Conscientiousness",
+          "facet": "Organization",
+          "text": "I like to keep things organized and tidy.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_4",
+          "domain": "Negative Emotionality",
+          "facet": "Anxiety",
+          "text": "I tend to worry a lot.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_5",
+          "domain": "Open-Mindedness",
+          "facet": "Intellectual Curiosity",
+          "text": "I enjoy thinking deeply about complex problems.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_6",
+          "domain": "Extraversion",
+          "facet": "Assertiveness",
+          "text": "I tend to dominate and take charge of others.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_7",
+          "domain": "Agreeableness",
+          "facet": "Respectfulness",
+          "text": "I am respectful and polite to others.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_8",
+          "domain": "Conscientiousness",
+          "facet": "Productiveness",
+          "text": "I tend to get tasks done efficiently.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_9",
+          "domain": "Negative Emotionality",
+          "facet": "Depression",
+          "text": "I often feel depressed and blue.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_10",
+          "domain": "Open-Mindedness",
+          "facet": "Creative Imagination",
+          "text": "I am imaginative and creative.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_11",
+          "domain": "Extraversion",
+          "facet": "Energy Level",
+          "text": "I am active and full of energy.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_12",
+          "domain": "Agreeableness",
+          "facet": "Trust",
+          "text": "I believe that most people are basically good.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_13",
+          "domain": "Conscientiousness",
+          "facet": "Responsibility",
+          "text": "I am reliable and can always be counted on.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_14",
+          "domain": "Negative Emotionality",
+          "facet": "Emotional Volatility",
+          "text": "I am moody and have mood swings.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_15",
+          "domain": "Open-Mindedness",
+          "facet": "Aesthetic Sensitivity",
+          "text": "I am very interested in art and beauty.",
+          "reverse": false
+        },
+        {
+          "id": "bfi_16",
+          "domain": "Extraversion",
+          "facet": "Sociability",
+          "text": "I am quiet and shy.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_17",
+          "domain": "Agreeableness",
+          "facet": "Compassion",
+          "text": "I am indifferent and cold toward others.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_18",
+          "domain": "Conscientiousness",
+          "facet": "Organization",
+          "text": "I am messy and disorganized.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_19",
+          "domain": "Negative Emotionality",
+          "facet": "Anxiety",
+          "text": "I am generally relaxed and not easily stressed.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_20",
+          "domain": "Open-Mindedness",
+          "facet": "Intellectual Curiosity",
+          "text": "I have little interest in abstract or theoretical ideas.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_21",
+          "domain": "Extraversion",
+          "facet": "Assertiveness",
+          "text": "I let others take charge and lead.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_22",
+          "domain": "Agreeableness",
+          "facet": "Respectfulness",
+          "text": "I tend to be rude and impolite to others.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_23",
+          "domain": "Conscientiousness",
+          "facet": "Productiveness",
+          "text": "I tend to procrastinate and slack off.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_24",
+          "domain": "Negative Emotionality",
+          "facet": "Depression",
+          "text": "I am emotionally stable and not easily upset.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_25",
+          "domain": "Open-Mindedness",
+          "facet": "Creative Imagination",
+          "text": "I have few artistic or creative interests.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_26",
+          "domain": "Extraversion",
+          "facet": "Energy Level",
+          "text": "I am lethargic and slow-paced.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_27",
+          "domain": "Agreeableness",
+          "facet": "Trust",
+          "text": "I tend to be suspicious of others' intentions.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_28",
+          "domain": "Conscientiousness",
+          "facet": "Responsibility",
+          "text": "I am sometimes irresponsible and unreliable.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_29",
+          "domain": "Negative Emotionality",
+          "facet": "Emotional Volatility",
+          "text": "I am emotionally stable and my mood doesn't change easily.",
+          "reverse": true
+        },
+        {
+          "id": "bfi_30",
+          "domain": "Open-Mindedness",
+          "facet": "Aesthetic Sensitivity",
+          "text": "I am not interested in art or aesthetic experiences.",
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "pvq",
+      "title": "PVQ Values Questionnaire",
+      "instruction": "Here are brief descriptions of different people. Please read each description and rate how much each person is like you.",
+      "scale": {
+        "1": "Not like me at all",
+        "2": "Not like me",
+        "3": "A little unlike me",
+        "4": "A little like me",
+        "5": "Like me",
+        "6": "Very much like me"
+      },
+      "questions": [
+        {
+          "id": "pvq_1",
+          "value_type": "Self-Direction",
+          "text": "Thinking up new ideas and being creative is important to this person. This person likes to do things in their own original way."
+        },
+        {
+          "id": "pvq_2",
+          "value_type": "Power",
+          "text": "It is important to this person to be rich. This person wants to have a lot of money and expensive things."
+        },
+        {
+          "id": "pvq_3",
+          "value_type": "Universalism",
+          "text": "It is important to this person that every person in the world have equal opportunities. This person believes everyone should have a chance in life."
+        },
+        {
+          "id": "pvq_4",
+          "value_type": "Achievement",
+          "text": "It is important to this person to show their abilities. This person wants people to admire what they do."
+        },
+        {
+          "id": "pvq_5",
+          "value_type": "Security",
+          "text": "It is important to this person to live in secure surroundings. This person avoids anything that might endanger their safety."
+        },
+        {
+          "id": "pvq_6",
+          "value_type": "Stimulation",
+          "text": "This person likes surprises and is always looking for new things to do. This person thinks it is important to do lots of different things in life."
+        },
+        {
+          "id": "pvq_7",
+          "value_type": "Conformity",
+          "text": "It is important to this person always to behave properly. This person wants to avoid doing anything people would say is wrong."
+        },
+        {
+          "id": "pvq_8",
+          "value_type": "Tradition",
+          "text": "Tradition is important to this person. This person tries to follow the customs handed down by their religion or family."
+        },
+        {
+          "id": "pvq_9",
+          "value_type": "Benevolence",
+          "text": "It is important to this person to help the people around them. This person wants to care for their well-being."
+        },
+        {
+          "id": "pvq_10",
+          "value_type": "Hedonism",
+          "text": "Having a good time is important to this person. This person likes to 'spoil' themselves."
+        },
+        {
+          "id": "pvq_11",
+          "value_type": "Self-Direction",
+          "text": "It is important to this person to make their own decisions about what they do. This person likes to be free and not depend on others."
+        },
+        {
+          "id": "pvq_12",
+          "value_type": "Universalism",
+          "text": "It is important to this person to care for nature and the environment. This person wants to protect the natural world."
+        },
+        {
+          "id": "pvq_13",
+          "value_type": "Power",
+          "text": "It is important to this person to lead others. This person wants people to do what they say."
+        },
+        {
+          "id": "pvq_14",
+          "value_type": "Achievement",
+          "text": "Being very successful is important to this person. This person hopes people will recognize their achievements."
+        },
+        {
+          "id": "pvq_15",
+          "value_type": "Security",
+          "text": "It is important to this person that the government protects them from all threats. This person wants the state to be strong so it can defend its citizens."
+        },
+        {
+          "id": "pvq_16",
+          "value_type": "Stimulation",
+          "text": "This person seeks every chance to have fun. It is important to this person to do things that give them pleasure."
+        },
+        {
+          "id": "pvq_17",
+          "value_type": "Benevolence",
+          "text": "It is important to this person to be loyal to their friends. This person wants to devote themselves to people close to them."
+        },
+        {
+          "id": "pvq_18",
+          "value_type": "Conformity",
+          "text": "It is important to this person to follow rules even when no one is watching. This person believes they should always follow the law."
+        },
+        {
+          "id": "pvq_19",
+          "value_type": "Tradition",
+          "text": "It is important to this person to be humble and modest. This person tries not to draw attention to themselves."
+        },
+        {
+          "id": "pvq_20",
+          "value_type": "Universalism",
+          "text": "It is important to this person that every person in the world be treated justly. This person believes everyone deserves equal opportunities."
+        },
+        {
+          "id": "pvq_21",
+          "value_type": "Hedonism",
+          "text": "It is important to this person to enjoy life's pleasures. This person likes to indulge themselves."
+        }
+      ]
+    }
+  ]
+}
