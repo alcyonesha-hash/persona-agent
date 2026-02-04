@@ -246,6 +246,13 @@ function updateCharCount(textarea, counterId) {
 
 function nextPage() {
     if (currentPage < totalPages - 1) {
+        // Validate current page before moving forward
+        const validationResult = validateCurrentPage();
+        if (!validationResult.valid) {
+            alert(validationResult.message);
+            return; // Don't proceed if validation fails
+        }
+
         // Save current page data
         savePageData(currentPage);
 
@@ -284,6 +291,161 @@ function prevPage() {
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
+
+function validateCurrentPage() {
+    switch(currentPage) {
+        case 0: // Welcome page - no validation needed
+            return { valid: true };
+
+        case 1: // Social Identity
+            return validateSocialIdentity();
+
+        case 2: // BFI
+            return validateBFI();
+
+        case 3: // PVQ
+            return validatePVQ();
+
+        case 4: // Life Context
+            return validateLifeContext();
+
+        default:
+            return { valid: true };
+    }
+}
+
+function validateSocialIdentity() {
+    if (!socialIdentityData) {
+        return { valid: false, message: 'Questionnaire data not loaded. Please refresh the page.' };
+    }
+
+    const unanswered = [];
+
+    socialIdentityData.questions.forEach((q, index) => {
+        if (q.type === 'multiselect') {
+            const checkboxes = document.querySelectorAll(`input[name="${q.id}"]:checked`);
+            if (checkboxes.length === 0) {
+                unanswered.push(`Question ${index + 1}: ${q.question}`);
+            }
+        } else {
+            const element = document.getElementById(q.id) ||
+                          document.querySelector(`input[name="${q.id}"]:checked`) ||
+                          document.querySelector(`select[name="${q.id}"]`);
+
+            if (!element || !element.value || element.value === '') {
+                unanswered.push(`Question ${index + 1}: ${q.question}`);
+            }
+        }
+    });
+
+    if (unanswered.length > 0) {
+        return {
+            valid: false,
+            message: `Please answer all questions before proceeding.\n\nUnanswered questions:\n${unanswered.slice(0, 3).join('\n')}${unanswered.length > 3 ? `\n... and ${unanswered.length - 3} more` : ''}`
+        };
+    }
+
+    return { valid: true };
+}
+
+function validateBFI() {
+    if (!personalIdentityData) {
+        return { valid: false, message: 'Questionnaire data not loaded. Please refresh the page.' };
+    }
+
+    const bfiSection = personalIdentityData.sections.find(s => s.id === 'bfi_2_s');
+    if (!bfiSection) {
+        return { valid: false, message: 'BFI questionnaire not found.' };
+    }
+
+    const unanswered = [];
+
+    bfiSection.questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+        if (!selected) {
+            unanswered.push(`Question ${index + 1}: ${q.text}`);
+        }
+    });
+
+    if (unanswered.length > 0) {
+        return {
+            valid: false,
+            message: `Please answer all ${bfiSection.questions.length} personality questions before proceeding.\n\nYou have ${unanswered.length} unanswered question(s).`
+        };
+    }
+
+    return { valid: true };
+}
+
+function validatePVQ() {
+    if (!personalIdentityData) {
+        return { valid: false, message: 'Questionnaire data not loaded. Please refresh the page.' };
+    }
+
+    const pvqSection = personalIdentityData.sections.find(s => s.id === 'pvq');
+    if (!pvqSection) {
+        return { valid: false, message: 'PVQ questionnaire not found.' };
+    }
+
+    const unanswered = [];
+
+    pvqSection.questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+        if (!selected) {
+            unanswered.push(`Question ${index + 1}: ${q.text.substring(0, 50)}...`);
+        }
+    });
+
+    if (unanswered.length > 0) {
+        return {
+            valid: false,
+            message: `Please answer all ${pvqSection.questions.length} values questions before proceeding.\n\nYou have ${unanswered.length} unanswered question(s).`
+        };
+    }
+
+    return { valid: true };
+}
+
+function validateLifeContext() {
+    const unanswered = [];
+
+    // Check loves (5 items)
+    for (let i = 1; i <= 5; i++) {
+        const element = document.getElementById(`love_${i}`);
+        if (!element || !element.value.trim()) {
+            unanswered.push(`Thing you love #${i}`);
+        }
+    }
+
+    // Check hates (5 items)
+    for (let i = 1; i <= 5; i++) {
+        const element = document.getElementById(`hate_${i}`);
+        if (!element || !element.value.trim()) {
+            unanswered.push(`Thing you hate #${i}`);
+        }
+    }
+
+    // Check weekday routine
+    const weekdayRoutine = document.getElementById('weekday_routine');
+    if (!weekdayRoutine || weekdayRoutine.value.trim().length < 450) {
+        unanswered.push('Weekday routine (minimum 450 characters)');
+    }
+
+    // Check weekend routine
+    const weekendRoutine = document.getElementById('weekend_routine');
+    if (!weekendRoutine || weekendRoutine.value.trim().length < 450) {
+        unanswered.push('Weekend routine (minimum 450 characters)');
+    }
+
+    if (unanswered.length > 0) {
+        return {
+            valid: false,
+            message: `Please complete all required fields before submitting.\n\nIncomplete fields:\n${unanswered.join('\n')}`
+        };
+    }
+
+    return { valid: true };
 }
 
 function updateProgress() {
@@ -394,17 +556,18 @@ function saveLifeContextData() {
 // ====================================
 
 async function submitSurvey() {
+    // Validate life context page before submission
+    const validationResult = validateLifeContext();
+    if (!validationResult.valid) {
+        alert(validationResult.message);
+        return;
+    }
+
     // Save final page data
     savePageData(currentPage);
 
     // Add timestamp
     surveyData.timestamp = new Date().toISOString();
-
-    // Validate data
-    if (!validateSurveyData()) {
-        alert('Please complete all required fields.');
-        return;
-    }
 
     // Store in localStorage as backup
     localStorage.setItem('spectrum_survey_data', JSON.stringify(surveyData));
