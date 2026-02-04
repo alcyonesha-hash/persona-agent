@@ -1,132 +1,257 @@
 {
-  "title": "Social Identity Questionnaire",
-  "description": "This questionnaire collects demographic information. All information will be processed anonymously.",
+  "title": "Section 1: Social Identity (S)",
+  "description": "This section collects demographic and contextual information. All responses are anonymous and confidential.",
   "questions": [
     {
       "id": "age",
-      "question": "What is your age range?",
+      "question": "What is your age?",
       "type": "text",
-      "hint": "e.g., 20s, 30s, or specific age"
+      "hint": "Enter your current age (e.g., 25, 30, 45)"
     },
     {
       "id": "sex",
-      "question": "What is your biological sex?",
-      "type": "choice",
-      "options": ["Male", "Female", "Other", "Prefer not to say"]
+      "question": "What sex were you assigned at birth?",
+      "type": "select",
+      "options": ["Male", "Female", "Intersex", "Prefer not to say"]
     },
     {
       "id": "gender",
       "question": "What is your gender identity?",
-      "type": "choice",
-      "options": ["Man", "Woman", "Non-binary", "Other", "Prefer not to say"]
+      "type": "select",
+      "options": [
+        "Woman",
+        "Man",
+        "Agender",
+        "Androgyne",
+        "Demigender",
+        "Genderqueer/Gender fluid",
+        "Questioning",
+        "Trans man",
+        "Trans woman",
+        "Other",
+        "Prefer not to disclose"
+      ]
     },
     {
       "id": "sexual_orientation",
       "question": "What is your sexual orientation?",
-      "type": "choice",
-      "options": ["Straight (heterosexual)", "Gay/Lesbian", "Bisexual", "Asexual", "Other", "Prefer not to say"]
+      "type": "select",
+      "options": [
+        "Straight (heterosexual)",
+        "Asexual",
+        "Bisexual",
+        "Gay",
+        "Lesbian",
+        "Pansexual",
+        "Queer",
+        "Questioning",
+        "Other",
+        "Prefer not to disclose"
+      ]
     },
     {
       "id": "ethnicity",
-      "question": "What is your ethnic background?",
-      "type": "text",
-      "hint": "e.g., Korean, Chinese, Japanese, Mixed, etc."
+      "question": "What are your ethnic origins or ancestry?",
+      "type": "multiselect",
+      "options": [
+        "Western Europe",
+        "Eastern Europe",
+        "North Africa",
+        "Sub-Saharan Africa",
+        "West Asia/Middle East",
+        "South/Southeast Asia",
+        "East/Central Asia",
+        "Pacific/Oceania",
+        "North America",
+        "Central/South America",
+        "Caribbean",
+        "Prefer not to disclose"
+      ]
     },
     {
       "id": "race",
-      "question": "What is your race?",
-      "type": "choice",
-      "options": ["East Asian", "Southeast Asian", "South Asian", "White", "Black", "Hispanic/Latino", "Mixed", "Other"]
+      "question": "What is your racial identity? (Select all that apply)",
+      "type": "multiselect",
+      "options": [
+        "Asian",
+        "Pacific Islander",
+        "Indigenous",
+        "Middle Eastern/North African",
+        "Black",
+        "Hispanic/Latino",
+        "White",
+        "Prefer not to disclose"
+      ]
     },
     {
       "id": "disability",
-      "question": "Do you have any disability or health impairment?",
-      "type": "choice",
-      "options": ["None", "Physical disability", "Sensory disability", "Mental disability", "Multiple disabilities", "Prefer not to say"]
+      "question": "Do you identify with any of the following disability categories? (Select all that apply)",
+      "type": "multiselect",
+      "options": [
+        "No disability",
+        "Deaf or hearing difficulty",
+        "Blind or sight difficulty",
+        "Mobility limitations",
+        "Motor limitations",
+        "Learning disability",
+        "Neurodiverse",
+        "Speech/language impairment",
+        "Chronic illness",
+        "Temporary impairment",
+        "Other",
+        "Prefer not to disclose"
+      ]
     },
     {
-      "id": "nationality",
-      "question": "What is your nationality?",
-      "type": "text",
-      "hint": "e.g., United States, South Korea, Japan, etc."
+      "id": "country_of_birth",
+      "question": "What is your country of birth?",
+      "type": "select",
+      "options": ["South Korea", "United States", "Other (please specify)"]
     },
     {
       "id": "dual_nationality",
       "question": "Do you have dual nationality?",
-      "type": "choice",
-      "options": ["No", "Yes (Country: _____)", "Prefer not to say"]
+      "type": "select",
+      "options": ["Yes", "No"]
     },
     {
       "id": "residence",
       "question": "Where do you currently reside?",
       "type": "text",
-      "hint": "e.g., Seoul, New York, etc. (specific address not needed)"
+      "hint": "Enter city, state/province, or country (e.g., Seoul, South Korea)"
     },
     {
       "id": "education",
-      "question": "What is your highest level of education?",
-      "type": "choice",
-      "options": ["Elementary or less", "Middle school", "High school", "Associate degree", "Bachelor's degree", "Master's degree", "Doctorate degree"]
+      "question": "What is your highest level of education completed?",
+      "type": "select",
+      "options": [
+        "Less than high school",
+        "High school diploma or equivalent",
+        "Some college (no degree)",
+        "Associate degree",
+        "Bachelor's degree",
+        "Master's degree",
+        "Professional degree (MD, JD, etc.)",
+        "Doctorate degree (PhD, EdD, etc.)"
+      ]
     },
     {
-      "id": "occupation",
+      "id": "employment",
       "question": "What is your current employment status?",
-      "type": "choice",
-      "options": ["Full-time employed (35+ hours/week)", "Part-time employed (<35 hours/week)", "Self-employed", "Student", "Unemployed", "Retired", "Other"]
-    },
-    {
-      "id": "major",
-      "question": "What is your field of study/major? (if applicable)",
-      "type": "text",
-      "hint": "e.g., Computer Science, Business, Medicine, etc."
-    },
-    {
-      "id": "job",
-      "question": "What is your specific job title? (if applicable)",
-      "type": "text",
-      "hint": "e.g., Software Developer, Teacher, Nurse, etc."
+      "type": "select",
+      "options": [
+        "Employed full-time",
+        "Employed part-time",
+        "Self-employed",
+        "Contract/Freelance",
+        "Unemployed (looking for work)",
+        "Unemployed (not looking for work)",
+        "Retired",
+        "Student",
+        "Unable to work",
+        "Prefer not to say"
+      ]
     },
     {
       "id": "household_income",
-      "question": "What is your approximate monthly household income?",
-      "type": "choice",
-      "options": ["Less than $2,500", "$2,500-$5,000", "$5,000-$7,500", "$7,500-$10,000", "More than $10,000", "Prefer not to say"]
+      "question": "What is your total annual household income (before taxes)?",
+      "type": "select",
+      "options": [
+        "Less than $25,000",
+        "$25,000 - $49,999",
+        "$50,000 - $74,999",
+        "$75,000 - $99,999",
+        "$100,000 - $149,999",
+        "$150,000 - $199,999",
+        "$200,000 or more",
+        "Don't know",
+        "Prefer not to say"
+      ]
     },
     {
       "id": "perceived_income",
-      "question": "How do you perceive your income level?",
-      "type": "choice",
-      "options": ["Below average", "Average", "Above average", "Prefer not to say"]
+      "question": "Compared to the average American, how would you describe your household income?",
+      "type": "select",
+      "options": [
+        "Far below average",
+        "Below average",
+        "About average",
+        "Above average",
+        "Far above average",
+        "Don't know"
+      ]
     },
     {
       "id": "income_satisfaction",
-      "question": "How satisfied are you with your current income level?",
-      "type": "choice",
-      "options": ["Very dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very satisfied"]
+      "question": "How satisfied are you with your current financial situation?",
+      "type": "select",
+      "options": [
+        "Not satisfied at all",
+        "Not very satisfied",
+        "Somewhat satisfied",
+        "Satisfied",
+        "Very satisfied"
+      ]
     },
     {
       "id": "social_class",
       "question": "Which social class do you consider yourself to belong to?",
-      "type": "choice",
-      "options": ["Lower class", "Lower-middle class", "Middle class", "Upper-middle class", "Upper class"]
+      "type": "select",
+      "options": [
+        "Lower class",
+        "Working class",
+        "Middle class",
+        "Upper class",
+        "Unsure/Prefer not to say"
+      ]
     },
     {
-      "id": "living_style",
-      "question": "What is your current living arrangement?",
-      "type": "choice",
-      "options": ["Living alone", "Living with partner/spouse", "Living with family", "Living with roommates", "Other"]
+      "id": "living_situation",
+      "question": "What is your current living situation? (Select all that apply)",
+      "type": "multiselect",
+      "options": [
+        "Living alone",
+        "Living with spouse/partner",
+        "Living with children",
+        "Living with parents",
+        "Living with other family members",
+        "Living with roommates (non-family)",
+        "Other"
+      ]
     },
     {
-      "id": "political_affiliation",
-      "question": "What is your political orientation?",
-      "type": "choice",
-      "options": ["Very liberal", "Liberal", "Moderate", "Conservative", "Very conservative", "Prefer not to say"]
+      "id": "political_views",
+      "question": "How would you describe your political views?",
+      "type": "select",
+      "options": [
+        "Very conservative",
+        "Conservative",
+        "Moderate",
+        "Liberal",
+        "Very liberal",
+        "Unsure/Prefer not to say"
+      ]
     },
     {
-      "id": "religious_affiliation",
-      "question": "What is your religion?",
-      "type": "choice",
-      "options": ["No religion", "Christianity", "Catholicism", "Buddhism", "Islam", "Other", "Prefer not to say"]
+      "id": "religious_preference",
+      "question": "What is your religious preference?",
+      "type": "select",
+      "options": [
+        "Protestant Christian",
+        "Catholic Christian",
+        "Orthodox Christian",
+        "Mormon/Latter-day Saints",
+        "Jewish",
+        "Muslim",
+        "Buddhist",
+        "Hindu",
+        "Agnostic",
+        "Atheist",
+        "Spiritual but not religious",
+        "No religion",
+        "Other",
+        "Unsure/Prefer not to say"
+      ]
     }
   ]
 }
